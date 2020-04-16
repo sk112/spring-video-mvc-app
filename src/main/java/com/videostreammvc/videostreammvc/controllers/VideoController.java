@@ -51,6 +51,7 @@ public class VideoController {
         BufferedImage bufferedImage = AWTUtil.toBufferedImage(picture);
         // ImageIO.write(bufferedImage, "png", new File(path+"/photos/frame.png"));
 
+        
         Iterator<ImageWriter> writers = ImageIO.getImageWritersByFormatName("png");
 
         ImageWriter writer = writers.next();
@@ -58,6 +59,8 @@ public class VideoController {
         ImageWriteParam param = writer.getDefaultWriteParam();
         param.setCompressionMode(ImageWriteParam.MODE_EXPLICIT);
         param.setCompressionQuality(0.21f);
+
+
 
         ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
         ImageOutputStream imageOutputStream = ImageIO.createImageOutputStream(byteArrayOutputStream);
